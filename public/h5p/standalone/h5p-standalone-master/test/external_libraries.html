@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>H5P Test</title>
+  <script type="text/javascript" src="/dist/main.bundle.js"></script>
+</head>
+
+<body>
+  <div id="h5p-container"></div>
+
+  <script type="text/javascript">
+    const {
+      H5P
+    } = H5PStandalone;
+    new H5P(document.getElementById('h5p-container'), {
+      h5pJsonPath: './h5p',
+      librariesPath: '/test/libraries',
+      frameJs: '/dist/frame.bundle.js',
+      frameCss: '/dist/styles/h5p.css'
+    });
+  </script>
+</body>
+
+</html>

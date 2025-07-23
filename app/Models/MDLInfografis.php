@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class MDLInfografis extends Model
+{
+    use HasFactory;
+
+    // Nama tabel yang digunakan
+    protected $table = 'mdl_infografis';
+
+    // Primary Key
+    protected $primaryKey = 'id';
+
+    public $timestamps = false;
+
+    // Kolom yang bisa diisi (mass assignment)
+    protected $fillable = [
+        'file_path',
+        'sub_topic_id',
+//        'created_at',
+    ];
+
+    // Relasi ke tabel MDLCourse
+    public function sub_topic()
+    {
+        return $this->belongsTo(CourseSubtopik::class, 'sub_topic_id','id');
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(DimensionOption::class, 'mdl_infografis_style', 'infografis_id', 'dimensi_opsi_id')
+            ->withPivot( 'created_at','updated_at')
+            ->withTimestamps();
+    }
+
+    public function getFilePathAttribute($value)
+    {
+        return asset($value);
+    }
+}

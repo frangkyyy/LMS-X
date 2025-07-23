@@ -1,0 +1,15 @@
+{
+    "name": "h5p/h5p-php-library",
+    "description": "H5P PHP Library",
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "psr/log": "^1.0",
+        "symfony/var-dumper": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "H5P\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>H5P Test</title>
+  <script type="text/javascript" src="/dist/main.bundle.js"></script>
+</head>
+
+<body>
+  <div id="h5p-container"></div>
+
+  <script type="text/javascript">
+
+    new H5PStandalone.H5P(document.getElementById('h5p-container'), {
+      h5pJsonPath: 'full_workspace',
+      frameJs: '/dist/frame.bundle.js',
+      frameCss: '/dist/styles/h5p.css',
+      frame: true,
+      copyright: true,
+      export: true,
+      downloadUrl: 'test.h5p',
+      embed: true,
+      embedCode: '<iframe width=":w" height=":h" src="https://yourembecode.om" frameBorder="0" scrolling="no"></iframe>',
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+test
+vendor
+cypress
+.github
+.circleci
+.eslintrc.json
+cypress.json
+h5p-standalone-release.zip
+src/
+.releaserc.json
+tsconfig.json
+webpack.*.js
